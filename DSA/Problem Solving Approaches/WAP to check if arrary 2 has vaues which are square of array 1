@@ -42,17 +42,18 @@ function square1(numArr1,numArr2){
     {
         sf2[value] = (sf2[value]||0)+ 1 ;
     }
-    //console.log(sf1,sf2);
+    console.log(sf1,sf2);   
     for (let key in sf1 ) {
-       // console.log(key);
+     
+     //console.log(key);
             
-       if(!(key**2)  in sf2){return false ;
-       if(sf2[key**2]!=sf2[key]) {return false;}}
+       if(!(key**2)  in sf2){return false ;}
+       if(sf2[key**2]!=sf1[key]) {return false;}
        
 
     }
 
   
 return true;
-}
-square1(numArr1,numArr2);
+} 
+square1(numArr1,numArr2); 
