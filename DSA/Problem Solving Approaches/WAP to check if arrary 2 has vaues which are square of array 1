@@ -1,0 +1,58 @@
+//########################################################################
+//wap to check whether 2nd array is exact square of first array
+
+var numArr11 = [1,2,3];
+var numArr22 = [1,4,9];
+
+function square1(numArr1,numArr2){
+    if(numArr1.length !== numArr2.length){return false;}
+    for( let i=0 ; i < numArr1.length ; i++){
+       let correctIndex = numArr2.indexOf(numArr1[i]**2);
+       if(correctIndex == -1) {
+           return false;
+       }
+       numArr2.splice(correctIndex,1);
+    }
+    return true;
+}
+
+//Logic:-  first check both array are of equal length.
+//check for each value of array1 there is corresponding square in array2
+
+//########################################################################
+//wap to check whether 2nd array is exact square of first array
+//logic - {1.check len1=len2}  {2.make two obj f1 and f2. Set key/propery from values of array & iterate over //array to get number of particular values.} {3.check for each key in f1 there is key**2 in f2} {4.check value of //key  in f1 for each key**2 in f2}
+
+var numArr1 = [1,2,3,3];
+var numArr2 = [1,4,9,9];
+
+function square1(numArr1,numArr2){
+    
+ if(numArr1.length !== numArr2.length){return false;}
+
+    var sf1 = {};
+    var sf2 = {};
+
+    for (let value of numArr1)
+    {
+        sf1[value] = (sf1[value]||0)+ 1 ;
+    }
+
+     for (let value of numArr2)
+    {
+        sf2[value] = (sf2[value]||0)+ 1 ;
+    }
+    //console.log(sf1,sf2);
+    for (let key in sf1 ) {
+       // console.log(key);
+            
+       if(!(key**2)  in sf2){return false ;
+       if(sf2[key**2]!=sf2[key]) {return false;}}
+       
+
+    }
+
+  
+return true;
+}
+square1(numArr1,numArr2);
