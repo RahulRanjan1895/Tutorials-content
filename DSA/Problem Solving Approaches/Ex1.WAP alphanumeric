@@ -1,0 +1,114 @@
+//Write a program to get number of letters and numbers only from a given string
+
+//Simple string reader and give number of strings (includes spaces and all type of characters
+//########################################################################
+function charCount(str) {
+  var result ={a:1};
+
+  for (var i=0 ; i<str.length;i++){
+    
+	//console.log(i);
+    
+	var char =str[i];
+
+    if(result[char]>0){
+      result[char]++;
+    }
+    
+    else {
+      result[char]=1;
+    }
+  }
+  return result;
+}
+
+//########################################################################
+//needs only lowecase but can give result for space and other special char also
+
+function charCount(str) {
+
+  var result ={a:1};
+
+  for (var i=0 ; i<str.length;i++){
+   
+//   console.log(i);
+	
+    var char =str[i].toLowerCase();
+
+    if(result[char]>0){
+      result[char]++;
+    }
+    
+    else {
+      result[char]=1;
+    }
+  }
+  return result;
+}
+
+//########################################################################
+
+
+function charCount(str) {
+
+  var result ={a:1};
+
+  for (var i=0 ; i<str.length;i++){
+   
+//   console.log(i);
+	
+    var char =str[i].toLowerCase();
+
+    if(result[char]>0){
+      result[char]++;
+    }
+    
+    else {
+      result[char]=1;
+    }
+  }
+  return result;
+}
+
+//########################################################################
+//only alphabet and numbers
+
+
+
+function charCount(str) {
+
+ var result={};
+
+  for (var i=0 ; i<str.length;i++){
+   
+//   console.log(i);
+	
+    var char =str[i].toLowerCase();
+
+   if(/[0-z0-9]/.test(char)){
+      result[char] = ++result[char] || 1;
+    }
+  }
+  return result;
+}
+
+
+//########################################################################
+//other way
+
+
+function charCount(str) {
+
+ var result={};
+
+  for (var i=0 ; i<str.length;i++){
+   
+//   console.log(i);
+	
+    var char =str[i].toLowerCase();
+    var nut =(!(char >= 'A' && char <= 'Z') && !(char >= 'a' && char <= 'z') && !(char >= '0' && char <= '9'));
+   if(nut)
+     { result[char] = ++result[char] || 1;  }
+  }
+  return result;
+}
